@@ -1,0 +1,271 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f58c94;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+  font: italic small-caps bold 16px/2 cursive; 
+}
+
+.box {
+  position: relative;
+}
+
+.motion {
+  position: relative;
+  top: 50px;
+  cursor: pointer;
+  animation: float 3s linear infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+.package {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #9d8c8c;
+}
+
+.package:before {
+  background-color: #9d8c8c;
+  content: "";
+  position: absolute;
+  width: 212px;
+  height: 212px;
+  transform: rotate(45deg);
+  top: -105px;
+  left: 44px;
+  border-radius: 30px 0 0 0;
+}
+
+.item {
+  position: absolute;
+  background-color: #f1f1f1;
+  width: 270px;
+  height: 170px;
+  top: 5px;
+  left: 15px;
+  transition: top 0.5s;
+}
+
+.item:before {
+  position: absolute;
+  border: 3px solid #003049;
+  width: 240px;
+  height: 140px;
+  left: 12px;
+  top: 12px;
+}
+
+.action-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.gif-content {
+  width: 250px;
+  height: auto;
+}
+
+.action-text {
+  font-size: 30px;
+  color: #ff0;
+  font-weight: 500;
+  margin: 10px;
+}
+
+.message {
+  position: absolute;
+  font-size: 28px;
+  text-align: center;
+  line-height: 25px;
+  top: 25px;
+  left: 45px;
+  color: #003049;
+}
+
+.circle {
+  background-color: #d62828;
+  display: inline-block;
+  height: 30px;
+  margin: 0 10px;
+  position: relative;
+  top: 120px;
+  left: 105px;
+  transform: rotate(-45deg);
+  width: 30px;
+}
+
+.circle:before,
+.circle:after {
+  content: "";
+  background-color: #d62828;
+  border-radius: 50%;
+  height: 30px;
+  position: absolute;
+  width: 30px;
+}
+
+.circle:before {
+  top: -15px;
+  left: 0;
+}
+
+.circle:after {
+  left: 15px;
+  top: 0;
+}
+
+.particles {
+  position: absolute;
+}
+
+.particles > * {
+  background-color: red;
+  display: inline-block;
+  height: 10px;
+  margin: 0 10px;
+  position: relative;
+  transform: rotate(-45deg);
+  width: 10px;
+  top: 50px;
+}
+
+.particles > *:before,
+.particles > *:after {
+  content: "";
+  background-color: red;
+  border-radius: 50%;
+  height: 10px;
+  position: absolute;
+  width: 10px;
+}
+
+.particles > *:before {
+  top: -5px;
+  left: 0;
+}
+
+.particles > *:after {
+  left: 5px;
+  top: 0;
+}
+
+.dot-1 {
+  left: 10px;
+  animation: bubble 1s ease-out infinite;
+}
+
+.dot-2 {
+  left: 30px;
+  animation: bubble 1.7s ease-out infinite;
+}
+
+.dot-3 {
+  left: 50px;
+  animation: bubble 1.5s ease-out infinite;
+}
+
+.dot-4 {
+  left: 70px;
+  animation: bubble 2s ease-out infinite;
+}
+
+.dot-5 {
+  left: 90px;
+  animation: bubble 1.2s ease-out infinite;
+}
+
+@keyframes bubble {
+  0% {
+    transform: translateY(0) rotate(-95deg) scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-150px) rotate(-45deg) scale(3);
+    opacity: 0.5;
+  }
+}
+
+.cover {
+  position: absolute;
+  border-right: 180px solid #ccc5c5;
+  border-top: 95px solid transparent;
+  border-bottom: 100px solid transparent;
+  left: 120px;
+  top: 5px;
+  width: 0;
+  height: 0;
+  z-index: 10;
+}
+
+.cover:before {
+  position: absolute;
+  content: "";
+  border-left: 300px solid #e9e3e1;
+  border-top: 195px solid transparent;
+  left: -120px;
+  top: -95px;
+  width: 0;
+  height: 0;
+}
+
+.actions {
+  margin-top: 120px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  display: inline-grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.actions button {
+  padding: 10px 30px;
+  font-size: 24px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  background-color: #d62828;
+  color: white;
+  min-width: 100px;
+  transition: all 0.3s, top 0.2s, left 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+#rejectButton {
+}
+
+@media (hover: hover) {
+  .box:hover .item {
+    top: -90px;
+  }
+  #acceptButton:hover {
+    background-color: #fff;
+    color: #f58c94;
+  }
+  #rejectButton:hover {
+    background-color: #663b27;
+    color: #000;
+  }
+}
+
+#control:checked ~ .box .item {
+  top: -90px;
+}
